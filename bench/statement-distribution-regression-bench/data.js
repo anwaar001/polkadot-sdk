@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1748015763511,
+  "lastUpdate": 1748240158256,
   "repoUrl": "https://github.com/paritytech/polkadot-sdk",
   "entries": {
     "statement-distribution-regression-bench": [
@@ -46987,6 +46987,50 @@ window.BENCHMARK_DATA = {
           {
             "name": "test-environment",
             "value": 0.045135564565999965,
+            "unit": "seconds"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "gui.thiolliere@gmail.com",
+            "name": "Guillaume Thiolliere",
+            "username": "gui1117"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2d1883f12755152eaf3d315cd4042cbf04a5d6e7",
+          "message": "Introduce CreateBare, deprecated CreateInherent (#7597)\n\nRename `CreateInherent` to `CreateBare`, add method `create_bare` and\ndeprecate `create_inherent`.\nBoth unsigned transaction and inherent use the extrinsic type `Bare`.\nBefore this PR `CreateInherent` trait was use to generate unsigned\ntransaction, now unsigned transaction can be generated using a proper\ntrait `CreateBare`.\nHow to upgrade:\n* Change usage of `CreateInherent` to `CreateBare` and `create_inherent`\nto `create_bare`.\n* Implement `CreateBare` for the runtime, the method `create_bare` is\nusually implemented using `Extrinsic::new_bare`.\n\n---------\n\nCo-authored-by: cmd[bot] <41898282+github-actions[bot]@users.noreply.github.com>",
+          "timestamp": "2025-05-26T05:13:04Z",
+          "tree_id": "4ad5f6bee8bf332251c23f613a03869585a63248",
+          "url": "https://github.com/paritytech/polkadot-sdk/commit/2d1883f12755152eaf3d315cd4042cbf04a5d6e7"
+        },
+        "date": 1748240139745,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Received from peers",
+            "value": 106.39999999999996,
+            "unit": "KiB"
+          },
+          {
+            "name": "Sent to peers",
+            "value": 127.98399999999998,
+            "unit": "KiB"
+          },
+          {
+            "name": "statement-distribution",
+            "value": 0.034215659706,
+            "unit": "seconds"
+          },
+          {
+            "name": "test-environment",
+            "value": 0.045381941013999984,
             "unit": "seconds"
           }
         ]

@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1748015683595,
+  "lastUpdate": 1748240076309,
   "repoUrl": "https://github.com/paritytech/polkadot-sdk",
   "entries": {
     "availability-recovery-regression-bench": [
@@ -56751,6 +56751,50 @@ window.BENCHMARK_DATA = {
           {
             "name": "availability-recovery",
             "value": 11.2418265564,
+            "unit": "seconds"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "gui.thiolliere@gmail.com",
+            "name": "Guillaume Thiolliere",
+            "username": "gui1117"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2d1883f12755152eaf3d315cd4042cbf04a5d6e7",
+          "message": "Introduce CreateBare, deprecated CreateInherent (#7597)\n\nRename `CreateInherent` to `CreateBare`, add method `create_bare` and\ndeprecate `create_inherent`.\nBoth unsigned transaction and inherent use the extrinsic type `Bare`.\nBefore this PR `CreateInherent` trait was use to generate unsigned\ntransaction, now unsigned transaction can be generated using a proper\ntrait `CreateBare`.\nHow to upgrade:\n* Change usage of `CreateInherent` to `CreateBare` and `create_inherent`\nto `create_bare`.\n* Implement `CreateBare` for the runtime, the method `create_bare` is\nusually implemented using `Extrinsic::new_bare`.\n\n---------\n\nCo-authored-by: cmd[bot] <41898282+github-actions[bot]@users.noreply.github.com>",
+          "timestamp": "2025-05-26T05:13:04Z",
+          "tree_id": "4ad5f6bee8bf332251c23f613a03869585a63248",
+          "url": "https://github.com/paritytech/polkadot-sdk/commit/2d1883f12755152eaf3d315cd4042cbf04a5d6e7"
+        },
+        "date": 1748240058078,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Sent to peers",
+            "value": 1.6666666666666665,
+            "unit": "KiB"
+          },
+          {
+            "name": "Received from peers",
+            "value": 307203,
+            "unit": "KiB"
+          },
+          {
+            "name": "availability-recovery",
+            "value": 11.37443037736667,
+            "unit": "seconds"
+          },
+          {
+            "name": "test-environment",
+            "value": 0.20099058479999998,
             "unit": "seconds"
           }
         ]

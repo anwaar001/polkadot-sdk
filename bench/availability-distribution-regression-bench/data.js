@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1748015710037,
+  "lastUpdate": 1748240103467,
   "repoUrl": "https://github.com/paritytech/polkadot-sdk",
   "entries": {
     "availability-distribution-regression-bench": [
@@ -70063,6 +70063,60 @@ window.BENCHMARK_DATA = {
           {
             "name": "test-environment",
             "value": 0.008486977380000083,
+            "unit": "seconds"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "gui.thiolliere@gmail.com",
+            "name": "Guillaume Thiolliere",
+            "username": "gui1117"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2d1883f12755152eaf3d315cd4042cbf04a5d6e7",
+          "message": "Introduce CreateBare, deprecated CreateInherent (#7597)\n\nRename `CreateInherent` to `CreateBare`, add method `create_bare` and\ndeprecate `create_inherent`.\nBoth unsigned transaction and inherent use the extrinsic type `Bare`.\nBefore this PR `CreateInherent` trait was use to generate unsigned\ntransaction, now unsigned transaction can be generated using a proper\ntrait `CreateBare`.\nHow to upgrade:\n* Change usage of `CreateInherent` to `CreateBare` and `create_inherent`\nto `create_bare`.\n* Implement `CreateBare` for the runtime, the method `create_bare` is\nusually implemented using `Extrinsic::new_bare`.\n\n---------\n\nCo-authored-by: cmd[bot] <41898282+github-actions[bot]@users.noreply.github.com>",
+          "timestamp": "2025-05-26T05:13:04Z",
+          "tree_id": "4ad5f6bee8bf332251c23f613a03869585a63248",
+          "url": "https://github.com/paritytech/polkadot-sdk/commit/2d1883f12755152eaf3d315cd4042cbf04a5d6e7"
+        },
+        "date": 1748240084886,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Received from peers",
+            "value": 433.3333333333332,
+            "unit": "KiB"
+          },
+          {
+            "name": "Sent to peers",
+            "value": 18481.666666666653,
+            "unit": "KiB"
+          },
+          {
+            "name": "bitfield-distribution",
+            "value": 0.02262080542666667,
+            "unit": "seconds"
+          },
+          {
+            "name": "availability-distribution",
+            "value": 0.0131318543,
+            "unit": "seconds"
+          },
+          {
+            "name": "availability-store",
+            "value": 0.16028861664666674,
+            "unit": "seconds"
+          },
+          {
+            "name": "test-environment",
+            "value": 0.008883813360000055,
             "unit": "seconds"
           }
         ]

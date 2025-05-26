@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1748015312856,
+  "lastUpdate": 1748239480980,
   "repoUrl": "https://github.com/paritytech/polkadot-sdk",
   "entries": {
     "request_response_protocol": [
@@ -41147,6 +41147,114 @@ window.BENCHMARK_DATA = {
             "name": "request_response_protocol/litep2p/serially/16MB",
             "value": 2508557508,
             "range": "± 29857337",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "gui.thiolliere@gmail.com",
+            "name": "Guillaume Thiolliere",
+            "username": "gui1117"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2d1883f12755152eaf3d315cd4042cbf04a5d6e7",
+          "message": "Introduce CreateBare, deprecated CreateInherent (#7597)\n\nRename `CreateInherent` to `CreateBare`, add method `create_bare` and\ndeprecate `create_inherent`.\nBoth unsigned transaction and inherent use the extrinsic type `Bare`.\nBefore this PR `CreateInherent` trait was use to generate unsigned\ntransaction, now unsigned transaction can be generated using a proper\ntrait `CreateBare`.\nHow to upgrade:\n* Change usage of `CreateInherent` to `CreateBare` and `create_inherent`\nto `create_bare`.\n* Implement `CreateBare` for the runtime, the method `create_bare` is\nusually implemented using `Extrinsic::new_bare`.\n\n---------\n\nCo-authored-by: cmd[bot] <41898282+github-actions[bot]@users.noreply.github.com>",
+          "timestamp": "2025-05-26T05:13:04Z",
+          "tree_id": "4ad5f6bee8bf332251c23f613a03869585a63248",
+          "url": "https://github.com/paritytech/polkadot-sdk/commit/2d1883f12755152eaf3d315cd4042cbf04a5d6e7"
+        },
+        "date": 1748239463240,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "request_response_protocol/libp2p/serially/64B",
+            "value": 19585707,
+            "range": "± 306663",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/libp2p/serially/512B",
+            "value": 20442591,
+            "range": "± 268309",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/libp2p/serially/4KB",
+            "value": 21980799,
+            "range": "± 282377",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/libp2p/serially/64KB",
+            "value": 26097365,
+            "range": "± 228443",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/libp2p/serially/256KB",
+            "value": 59286963,
+            "range": "± 1187747",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/libp2p/serially/2MB",
+            "value": 336538539,
+            "range": "± 5554008",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/libp2p/serially/16MB",
+            "value": 2683233409,
+            "range": "± 153687026",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/litep2p/serially/64B",
+            "value": 17879629,
+            "range": "± 365380",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/litep2p/serially/512B",
+            "value": 18101686,
+            "range": "± 417913",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/litep2p/serially/4KB",
+            "value": 18079676,
+            "range": "± 84382",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/litep2p/serially/64KB",
+            "value": 23265501,
+            "range": "± 389646",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/litep2p/serially/256KB",
+            "value": 57736595,
+            "range": "± 2788063",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/litep2p/serially/2MB",
+            "value": 351936014,
+            "range": "± 4663903",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "request_response_protocol/litep2p/serially/16MB",
+            "value": 2648915349,
+            "range": "± 28003406",
             "unit": "ns/iter"
           }
         ]
